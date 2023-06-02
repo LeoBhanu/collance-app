@@ -1,10 +1,21 @@
 export interface User {
     name: string;
-    age: number;
+    age: string;
     dob: string;
-    phone: number;
-    address: string;
+    phone: string;
+    address: string[];
     email: string;
     password: string;
-    cPassword: string;
+    confirmPassword: string;
+}
+
+export interface UserStateType{
+    users: User[];
+    editUserData: User;
+    isEditUser: boolean;
+    selectedUserIndex: number;
+  }
+
+export interface ErrorMessageType {
+    [key:string]:string
 }

@@ -1,3 +1,12 @@
-export const ErrorType = {
-    Name : "Name",
-}
+import { User } from "../types";
+
+export const defaultUserValue: User = {
+    address: [""],
+    age: "",
+    dob: "",
+    email: "",
+    name: "",
+    password: "",
+    phone: "",
+    confirmPassword: "",
+  };

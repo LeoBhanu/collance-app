@@ -9,7 +9,7 @@ form {
 
 input {
   width: 80%;
-  font-size: 18px;
+  font-size: 16px;
   padding: 12px 20px;
   border: 1px solid #ccc;
   border-radius: 10px;
@@ -45,7 +45,6 @@ p {
 }
 
 .addBtn {
-  border: 1px solid #aaa;
   border-radius: 10px;
   width: 50px;
   padding: 12px 12px;
@@ -55,15 +54,8 @@ p {
 
 
 @media only screen and (max-width: 600px) {
-  input {
-    width: 90%;
-  }
-
-  input[type="submit"] {
-    width: 50%;
-  }
-
-  input[type="password"] {
-    width: 87%;
-  }
+ form {
+  width: 90%;
+  margin: auto;
+ }
 }
