@@ -1,0 +1,69 @@
+h1{
+  text-align: center;
+}
+
+form {
+  width: 40%;
+  margin: auto;
+}
+
+input {
+  width: 80%;
+  font-size: 18px;
+  padding: 12px 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+input[type="submit"] {
+  background: linear-gradient(90deg, #f53a6d, rgba(55, 5, 255, 0.67));
+  color: white;
+  font-size: 20px;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button {
+  height: 40px;
+  background-color: white;
+}
+
+p {
+  color: red;
+  text-align: left;
+  font-size: 12px;
+  min-height: 14px;
+}
+
+.row {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.addBtn {
+  border: 1px solid #aaa;
+  border-radius: 10px;
+  width: 50px;
+  padding: 12px 12px;
+  margin-left:5px;
+  cursor: pointer;
+}
+
+
+@media only screen and (max-width: 600px) {
+  input {
+    width: 90%;
+  }
+
+  input[type="submit"] {
+    width: 50%;
+  }
+
+  input[type="password"] {
+    width: 87%;
+  }
+}
