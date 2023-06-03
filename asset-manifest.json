@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/collance-app/static/css/main.52d20da3.css",
-    "main.js": "/collance-app/static/js/main.efa17580.js",
+    "main.css": "/collance-app/static/css/main.c7635de9.css",
+    "main.js": "/collance-app/static/js/main.749146d6.js",
     "static/js/787.1724ae0e.chunk.js": "/collance-app/static/js/787.1724ae0e.chunk.js",
     "static/media/plus.svg": "/collance-app/static/media/plus.58ba4f8a287e90045a9fb6723fc0251e.svg",
     "static/media/minus.svg": "/collance-app/static/media/minus.b3d2b3286e29f50c48a0952466966f2e.svg",
     "static/media/edit.svg": "/collance-app/static/media/edit.b4b398d23e196ba0835e10619061fd38.svg",
     "index.html": "/collance-app/index.html",
     "static/media/deleteicon.svg": "/collance-app/static/media/deleteicon.fabf912ea2f9b660e28864cb06cacf3a.svg",
-    "main.52d20da3.css.map": "/collance-app/static/css/main.52d20da3.css.map",
-    "main.efa17580.js.map": "/collance-app/static/js/main.efa17580.js.map",
+    "main.c7635de9.css.map": "/collance-app/static/css/main.c7635de9.css.map",
+    "main.749146d6.js.map": "/collance-app/static/js/main.749146d6.js.map",
     "787.1724ae0e.chunk.js.map": "/collance-app/static/js/787.1724ae0e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.52d20da3.css",
-    "static/js/main.efa17580.js"
+    "static/css/main.c7635de9.css",
+    "static/js/main.749146d6.js"
   ]
 }
