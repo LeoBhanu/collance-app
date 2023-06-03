@@ -34,10 +34,17 @@ export const userSlice = createSlice({
       state.users[state.selectedUserIndex] = action.payload
       state.selectedUserIndex = -1;
     },
+    unSelectUser: (
+      state
+    ) => {
+      state.isEditUser = false;
+      state.editUserData = defaultUserValue;
+      state.selectedUserIndex = -1;
+    }
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { addUser, deleteUser, selectUser, editUser } = userSlice.actions;
+export const { addUser, deleteUser, selectUser, editUser, unSelectUser } = userSlice.actions;
 
 export default userSlice.reducer;

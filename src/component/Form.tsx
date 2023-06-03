@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux'
 
 import { defaultUserValue } from "../util";
-import { addUser, editUser } from "./userSlice";
+import { addUser, editUser, unSelectUser } from "./userSlice";
 import { ErrorMessageType, User } from "../types";
 
 import plus from "../assets/plus.svg"
@@ -89,7 +89,7 @@ const Form = () => {
         } else if (password != confirmPassword) {
             error.confirmPassword = "Password and Confirm Password is not matched!";
             valid = false;
-        } else if(!(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}$/.test(password))){
+        } else if (!(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}$/.test(password))) {
             error.password = "Password should contain atleast one uppercase, one special character and minimum length of 10!";
             valid = false;
         }
@@ -100,7 +100,7 @@ const Form = () => {
         } else if ((phone).toString().length < 8 || (phone).toString().length > 10) {
             error.phone = "Phone number length should be greater than 8 and less then 10";
             valid = false;
-        } else if(!(/^\d+$/.test(phone))){
+        } else if (!(/^\d+$/.test(phone))) {
             error.phone = "Phone number should not contain letters or special characters";
             valid = false;
         }
@@ -108,7 +108,7 @@ const Form = () => {
         if (dob.trim().length === 0) {
             error.dob = "This Field Cannot be blank!";
             valid = false;
-        } 
+        }
 
 
         setErrorMsg(error)
@@ -139,8 +139,13 @@ const Form = () => {
         setUserData({ ...userData, age: (Math.abs(ageDate.getUTCFullYear() - 1970)).toString() })
     }, [userData.dob])
 
-    const handleChange  = (e: any) => {
-         setUserData({ ...userData, [e.target.name]: e.target.value })
+    const handleChange = (e: any) => {
+        setUserData({ ...userData, [e.target.name]: e.target.value })
+    }
+
+    const handleReset = () => {
+        setUserData(defaultUserValue)
+        dispatch(unSelectUser())
     }
 
     return (
@@ -217,16 +222,19 @@ const Form = () => {
                 />
                 <p>{errorMsg.email}</p>
 
+                <div className="row">
+                    <input
+                        name="password"
+                        value={userData.password}
+                        onChange={handleChange}
+                        placeholder="Password"
+                        type={showPassword ? "text" : "password"}
 
-                <input
-                    name="password"
-                    value={userData.password}
-                    onChange={handleChange}
-                    placeholder="Password"
-                />
-                {/* <div onClick={() => setShowPass(!showPass)}>
-                    {showPass ? "hide" : "show"}
-                </div> */}
+                    />
+                    <div className="showbtn" onClick={() => setShowPassword(!showPassword)}>
+                        {showPassword ? "hide" : "show"}
+                    </div>
+                </div>
                 <p>{errorMsg.password}</p>
 
                 <input
@@ -239,7 +247,7 @@ const Form = () => {
                 <p>{errorMsg.confirmPassword}</p>
 
                 <input type="submit" onClick={onSubmit} />
-                <div style={{ textAlign: 'end', cursor: 'pointer' }} onClick={() => setUserData(defaultUserValue)}>Reset form</div>
+                <div style={{ textAlign: 'end', cursor: 'pointer' }} onClick={handleReset}>Reset form</div>
             </form>
         </section>
     );

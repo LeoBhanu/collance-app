@@ -8,7 +8,7 @@ form {
 }
 
 input {
-  width: 80%;
+  width: 100%;
   font-size: 16px;
   padding: 12px 20px;
   border: 1px solid #ccc;
@@ -49,6 +49,15 @@ p {
   width: 50px;
   padding: 12px 12px;
   margin-left:5px;
+  cursor: pointer;
+}
+
+.showbtn {
+  width: 50px;
+  margin-left:5px;
+  border: 1px solid #ccc;
+  padding: 12px 20px;
+  border-radius: 10px;
   cursor: pointer;
 }
 
