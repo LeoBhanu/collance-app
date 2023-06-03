@@ -152,15 +152,17 @@ const Form = () => {
         <section>
             <h1>{isEdit ? "Edit User" : "Add User"}</h1>
             <form>
+                <label className="form-label">Name</label>
                 <input
                     name="name"
                     value={userData.name}
                     onChange={handleChange}
-                    placeholder="Name"
+                    placeholder="Enter your Name..."
                     type="text"
                 />
                 <p>{errorMsg.name}</p>
 
+                <label className="form-label">Date Of Birth</label>
                 <input
                     name="dob"
                     value={userData.dob}
@@ -171,6 +173,7 @@ const Form = () => {
                 />
                 <p>{errorMsg.dob}</p>
 
+                <label className="form-label">Age</label>
                 <input
                     disabled
                     name="age"
@@ -179,17 +182,19 @@ const Form = () => {
                     type="text"
                 />
                 <p>{errorMsg.age}</p>
-
+                
+                <label className="form-label">Phone Number</label>
                 <input
                     value={userData.phone}
                     onChange={handleChange}
-                    placeholder="Phone Number"
+                    placeholder="Enter your Phone Number..."
                     type="text"
                     name="phone"
                 />
                 <p>{errorMsg.phone}</p>
 
                 <div>
+                <label className="form-label">Address</label>
                     {userData.address.map((item, index) => {
                         return (
                             <div className="row">
@@ -198,7 +203,7 @@ const Form = () => {
                                     key={index}
                                     value={item}
                                     onChange={(e) => handleAddress(e.target.value, index)}
-                                    placeholder="Address"
+                                    placeholder="Enter your Address..."
                                     type="text"
                                 />
                                 {
@@ -212,22 +217,23 @@ const Form = () => {
                     <p>{errorMsg.address}</p>
                 </div>
 
-
+                <label className="form-label">Email</label>
                 <input
                     name="email"
                     value={userData.email}
                     onChange={handleChange}
                     type="email"
-                    placeholder="Email"
+                    placeholder="Enter your Email..."
                 />
                 <p>{errorMsg.email}</p>
 
+                <label className="form-label">Password</label>
                 <div className="row">
                     <input
                         name="password"
                         value={userData.password}
                         onChange={handleChange}
-                        placeholder="Password"
+                        placeholder="Enter your Password..."
                         type={showPassword ? "text" : "password"}
 
                     />
@@ -237,11 +243,12 @@ const Form = () => {
                 </div>
                 <p>{errorMsg.password}</p>
 
+                <label className="form-label">Confirm Password</label>
                 <input
                     name="confirmPassword"
                     value={userData.confirmPassword}
                     onChange={handleChange}
-                    placeholder="Confirm Password"
+                    placeholder="Enter password again to Confirm Password..."
                     type={"password"}
                 />
                 <p>{errorMsg.confirmPassword}</p>
